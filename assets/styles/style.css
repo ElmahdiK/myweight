@@ -15,39 +15,78 @@ body {
   height: 100%;
   overflow-x: hidden;
   font-family: helvetica;
-  background: linear-gradient(to top, lavender 0%, #fff 100%);
+
+  display: flex;
+
+  flex-direction: column;
 }
-header {
-  height: 10dvh;
-  padding: 0px 5%;
-  background-color: #fff;
-  box-shadow: 0px 3px 4px #eee;
-  border-bottom: #111 1px solid;
+
+footer {
+  background-color: #b3e5fc;
+  color: #000;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  z-index: 2;
+
+  height: 10vh;
 }
-header p {
-  font-size: 22px;
-}
-header img {
+
+footer img {
   display: block;
+  object-fit: contain;
+  height: calc(100% - 20px);
+  padding: 10px;
+}
+
+footer div {
+  padding: 0px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer div p {
+  font-size: 22px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer div span {
+  color: #555;
+  font-size: 16px;
+  font-weight: normal;
 }
 
 main {
-  /* background-color: #fafafa; */
-  padding-top: 30px;
-  height: calc(85dvh - 30px);
-  overflow-y: scroll;
-  width: 60%;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-#graphWeight {
-  border-bottom: 1px dashed #333;
-  margin-bottom: 1%;
+
+.div-col_1,
+.div-col_2 {
+  padding: 0px 40px;
+
+  height: calc(90vh - 0px);
+
+  display: flex;
+  align-items: center;
+}
+
+.div-col_1 {
+  width: 40%;
+}
+
+.div-col_2 {
+  width: 60%;
+  background-color: #181138;
 }
 
 table.dataTable td {
@@ -56,4 +95,37 @@ table.dataTable td {
 
 /* -- mobile --*/
 @media screen and (max-width: 700px) {
+  body {
+    flex-direction: column-reverse;
+  }
+
+  footer {
+    height: 6vh;
+    justify-content: space-between;
+  }
+
+  footer img {
+    height: calc(100% - 8px);
+    padding: 4px;
+  }
+  main {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+
+  .div-col_1,
+  .div-col_2 {
+    padding: 0px 0px;
+
+    height: auto; 
+    display: block;
+  }
+
+  .div-col_1 {
+    width: 100%;
+  }
+
+  .div-col_2 {
+    width: 100%;
+  }
 }
