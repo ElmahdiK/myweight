@@ -32,13 +32,15 @@ footer {
   height: 10vh;
 }
 
-footer img {
+footer a {
   display: block;
-  object-fit: contain;
   height: calc(100% - 20px);
   padding: 10px;
 }
-
+footer a img {
+  height: 100%;
+  /* object-fit: contain; */
+}
 footer div {
   padding: 0px 10px;
   display: flex;
@@ -104,9 +106,14 @@ table.dataTable td {
     justify-content: space-between;
   }
 
-  footer img {
+  footer a {
     height: calc(100% - 8px);
     padding: 4px;
+  }
+
+  footer div p {
+    font-size: 18px;
+    padding-bottom: 2px;
   }
   main {
     width: 100%;
